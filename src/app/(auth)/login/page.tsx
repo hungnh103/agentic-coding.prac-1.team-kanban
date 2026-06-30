@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { Suspense, useState } from "react"
 import { signIn } from "next-auth/react"
 import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get("callbackUrl") ?? "/"
@@ -42,57 +42,65 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle>Đăng nhập</CardTitle>
-          <CardDescription>Nhập thông tin để truy cập tài khoản của bạn</CardDescription>
-        </CardHeader>
-        <form onSubmit={handleSubmit}>
-          <CardContent className="space-y-4">
-            {error && (
-              <p className="text-sm text-destructive bg-destructive/10 px-3 py-2 rounded-md">
-                {error}
-              </p>
-            )}
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="email@example.com"
-                required
-                autoComplete="email"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Mật khẩu</Label>
-              <Input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-                required
-                autoComplete="current-password"
-              />
-            </div>
-          </CardContent>
-          <CardFooter className="flex flex-col gap-3">
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Đang đăng nhập..." : "Đăng nhập"}
-            </Button>
-            <p className="text-sm text-muted-foreground text-center">
-              Chưa có tài khoản?{" "}
-              <Link href="/register" className="text-primary hover:underline">
-                Đăng ký ngay
-              </Link>
+    <Card className="w-full max-w-md">
+      <CardHeader>
+        <CardTitle>Đăng nhập</CardTitle>
+        <CardDescription>Nhập thông tin để truy cập tài khoản của bạn</CardDescription>
+      </CardHeader>
+      <form onSubmit={handleSubmit}>
+        <CardContent className="space-y-4">
+          {error && (
+            <p className="text-sm text-destructive bg-destructive/10 px-3 py-2 rounded-md">
+              {error}
             </p>
-          </CardFooter>
-        </form>
-      </Card>
+          )}
+          <div className="space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="email@example.com"
+              required
+              autoComplete="email"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="password">Mật khẩu</Label>
+            <Input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••••"
+              required
+              autoComplete="current-password"
+            />
+          </div>
+        </CardContent>
+        <CardFooter className="flex flex-col gap-3">
+          <Button type="submit" className="w-full" disabled={loading}>
+            {loading ? "Đang đăng nhập..." : "Đăng nhập"}
+          </Button>
+          <p className="text-sm text-muted-foreground text-center">
+            Chưa có tài khoản?{" "}
+            <Link href="/register" className="text-primary hover:underline">
+              Đăng ký ngay
+            </Link>
+          </p>
+        </CardFooter>
+      </form>
+    </Card>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+      <Suspense fallback={<div className="w-full max-w-md h-96 rounded-lg border bg-muted animate-pulse" />}>
+        <LoginForm />
+      </Suspense>
     </div>
   )
 }
