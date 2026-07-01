@@ -28,8 +28,8 @@
 - [X] T006 [P] Cấu hình Playwright trong `playwright.config.ts`
 - [X] T007 [P] Tạo `netlify.toml`
 - [X] T008 [P] Tạo `.env.example`
-- [ ] T090 Tạo Supabase project
-- [ ] T091 [P] Tạo `AUTH_SECRET`, set `.env.local`, chạy `npx prisma db push`
+- [X] T090 Tạo Supabase project
+- [X] T091 [P] Tạo `AUTH_SECRET`, set `.env`, chạy `npx prisma db push`
 
 **Checkpoint**: Dự án khởi tạo xong — `npm run dev` chạy được, kết nối Supabase OK, `npm run test` cấu hình xong
 
@@ -42,7 +42,7 @@
 **⚠️ CRITICAL**: Không user story nào có thể bắt đầu cho đến khi phase này hoàn thành
 
 - [X] T009 Định nghĩa Prisma schema đầy đủ với 7 entity trong `prisma/schema.prisma`
-- [ ] T010 Chạy migration đầu tiên: `npx prisma migrate dev --name init`
+- [X] T010 Chạy migration đầu tiên: `npx prisma migrate dev --name init`
 - [X] T011 [P] Tạo Prisma client singleton trong `src/lib/db.ts`
 - [X] T012 [P] Cấu hình Auth.js v5 trong `src/lib/auth.ts`
 - [X] T013 Tạo API route handler Auth.js tại `src/app/api/auth/[...nextauth]/route.ts`
@@ -100,11 +100,11 @@
 
 **Điều kiện**: Phase 3 hoàn thành + tất cả tests US1 pass
 
-- [ ] T092 Chạy Prisma migration trên production database: `npx prisma migrate deploy` (dùng `DIRECT_URL` port 5432) — xác nhận tất cả 7 tables tồn tại trong Supabase Dashboard
-- [ ] T093 Kết nối GitHub repo với Netlify — vào Netlify Dashboard → "Add new site" → "Import from Git", chọn repo, set build command `npm run build`, publish directory `.next`
-- [ ] T094 [P] Set environment variables trên Netlify Dashboard (Site settings → Environment variables): `DATABASE_URL` (pooler port 6543), `DIRECT_URL` (direct port 5432), `AUTH_SECRET`, `AUTH_URL` và `NEXTAUTH_URL` (https://\<your-site\>.netlify.app)
-- [ ] T095 Trigger deploy đầu tiên — kiểm tra Netlify build log, xác nhận deploy thành công không có lỗi, truy cập production URL
-- [ ] T096 Smoke test MVP trên production URL: đăng ký tài khoản → đăng nhập → tạo board → thêm 3 columns → đổi tên column → xóa column — xác nhận US1 acceptance scenarios hoạt động đúng trên production
+- [X] T092 Chạy Prisma migration trên production database: `npx prisma migrate deploy` (dùng `DIRECT_URL` port 5432) — xác nhận tất cả 7 tables tồn tại trong Supabase Dashboard
+- [X] T093 Kết nối GitHub repo với Netlify — vào Netlify Dashboard → "Add new site" → "Import from Git", chọn repo, set build command `npm run build`, publish directory `.next`
+- [X] T094 [P] Set environment variables trên Netlify Dashboard (Site settings → Environment variables): `DATABASE_URL` (pooler port 6543), `DIRECT_URL` (direct port 5432), `AUTH_SECRET`, `AUTH_URL` và `NEXTAUTH_URL` (https://\<your-site\>.netlify.app)
+- [X] T095 Trigger deploy đầu tiên — kiểm tra Netlify build log, xác nhận deploy thành công không có lỗi, truy cập production URL
+- [X] T096 Smoke test MVP trên production URL: đăng ký tài khoản → đăng nhập → tạo board → thêm 3 columns → đổi tên column → xóa column — xác nhận US1 acceptance scenarios hoạt động đúng trên production
 
 **Checkpoint**: ✅ MVP live trên Netlify — share URL để demo, nhận feedback trước khi tiếp tục implement US2–US5
 
@@ -133,7 +133,7 @@
 
 **Checkpoint**: US2 hoạt động độc lập — full CRUD cho cards, xem được card detail
 
-- [ ] T097 Redeploy sau US2 — push code lên GitHub (Netlify auto-deploy), sau khi build xong smoke test card CRUD trên production URL
+- [X] T097 Redeploy sau US2 — push code lên GitHub (Netlify auto-deploy), sau khi build xong smoke test card CRUD trên production URL
 
 ---
 
@@ -192,7 +192,7 @@
 
 **Checkpoint**: US4 hoạt động — assignment và comments đầy đủ, authorization đúng
 
-- [ ] T099 Redeploy sau US4 — push code, smoke test assign card + comment trên production URL
+- [X] T099 Redeploy sau US4 — push code, smoke test assign card + comment trên production URL
 
 ---
 
@@ -217,7 +217,7 @@
 
 **Checkpoint**: US5 hoạt động — activity log hiển thị đúng, pagination hoạt động, tất cả 5 user stories hoàn chỉnh
 
-- [ ] T100 Redeploy sau US5 — push code, smoke test toàn bộ US1–US5 trên production URL trước khi vào phase Polish
+- [X] T100 Redeploy sau US5 — push code, smoke test toàn bộ US1–US5 trên production URL trước khi vào phase Polish
 
 ---
 
