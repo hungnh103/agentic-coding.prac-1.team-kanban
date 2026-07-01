@@ -26,7 +26,7 @@ export function BoardPageClient({ initialBoard, currentUser }: BoardPageClientPr
       <header className="border-b bg-card shrink-0">
         <div className="max-w-full px-4 h-14 flex items-center gap-3">
           <Button variant="ghost" size="icon" asChild>
-            <Link href="/">
+            <Link href="/" aria-label="Quay lại">
               <ArrowLeft className="h-4 w-4" />
             </Link>
           </Button>

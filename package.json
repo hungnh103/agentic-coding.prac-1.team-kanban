@@ -11,6 +11,8 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
+    "audit:bundle": "npm run build && node scripts/audit-bundle.js",
+    "audit:high": "npm audit --audit-level=high",
     "test:e2e": "playwright test"
   },
   "dependencies": {

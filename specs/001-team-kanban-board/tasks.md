@@ -229,11 +229,11 @@
 - [X] T080 [P] Rate limiting cho auth endpoints trong `src/lib/rate-limit.ts` (in-memory, 10 req/15min/IP)
 - [X] T081 [P] CORS allowlist trong `src/middleware.ts`
 - [X] T082 CSP headers đã có trong `next.config.mjs`
-- [ ] T083 [P] Accessibility audit với `@axe-core/react`
-- [ ] T084 [P] Responsive testing
-- [ ] T085 [P] Bundle size audit
-- [ ] T086 N+1 query review
-- [ ] T087 [P] `npm audit --audit-level=high`
+- [X] T083 [P] Accessibility audit với `@axe-core/react`
+- [X] T084 [P] Responsive testing
+- [X] T085 [P] Bundle size audit
+- [X] T086 N+1 query review
+- [X] T087 [P] `npm audit --audit-level=high`
 - [X] T088 Test suite: 29/29 pass (`npm run test`) — E2E cần môi trường live
 - [X] T089 Validate theo `quickstart.md` và kiểm tra requirement về màu nền board/column theo spec mới
 - [X] T102 [P] Rà soát lại contrast, spacing và cảm giác visual của board/column trong `src/components/board/Column.tsx`, `src/components/board/ColumnList.tsx` và `src/app/globals.css`
