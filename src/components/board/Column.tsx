@@ -68,7 +68,7 @@ export function Column({ column, board, currentUserId }: ColumnProps) {
   }
 
   return (
-    <div className="flex flex-col w-72 shrink-0 bg-muted/50 rounded-lg p-3">
+    <div className="column-shell flex flex-col w-72 shrink-0 p-3">
       {/* Column Header */}
       <div className="flex items-center justify-between mb-3">
         {isRenaming ? (

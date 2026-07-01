@@ -46,7 +46,7 @@ export function ColumnList({ board, currentUserId }: ColumnListProps) {
             {showAddForm ? (
               <form
                 onSubmit={handleAddColumn}
-                className="bg-muted/50 rounded-lg p-3 space-y-2"
+                className="column-shell p-3 space-y-2"
               >
                 <Input
                   value={newColumnName}

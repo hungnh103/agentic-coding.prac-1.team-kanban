@@ -61,7 +61,7 @@ export function BoardPageClient({ initialBoard, currentUser }: BoardPageClientPr
 
       {/* Board content */}
       <div className="flex flex-1 overflow-hidden">
-        <main className="flex-1 overflow-hidden p-4">
+        <main className="flex-1 overflow-hidden p-4 board-shell m-4">
           <ColumnList board={displayBoard} currentUserId={currentUser.id} />
         </main>
 

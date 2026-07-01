@@ -89,6 +89,7 @@
 - [X] T038 [P] [US1] TanStack Query hooks trong `src/hooks/useBoards.ts`
 - [X] T039 [P] [US1] TanStack Query hooks trong `src/hooks/useColumns.ts`
 - [X] T040 [US1] TanStack Query provider trong `src/app/providers.tsx` và root layout
+- [ ] T101 [US1] Cập nhật màu nền board và column trong `src/components/board/Column.tsx`, `src/components/board/ColumnList.tsx` và `src/app/globals.css` theo tông nhẹ, dịu mắt, hiện đại
 
 **Checkpoint**: US1 hoạt động độc lập — người dùng có thể đăng ký, đăng nhập, tạo board, thêm/sửa/xóa columns
 
@@ -234,7 +235,8 @@
 - [ ] T086 N+1 query review
 - [ ] T087 [P] `npm audit --audit-level=high`
 - [X] T088 Test suite: 29/29 pass (`npm run test`) — E2E cần môi trường live
-- [ ] T089 Validate theo `quickstart.md`
+- [ ] T089 Validate theo `quickstart.md` và kiểm tra requirement về màu nền board/column theo spec mới
+- [ ] T102 [P] Rà soát lại contrast, spacing và cảm giác visual của board/column trong `src/components/board/Column.tsx`, `src/components/board/ColumnList.tsx` và `src/app/globals.css`
 
 ---
 

@@ -28,6 +28,7 @@ A user registers an account and creates a new Kanban board for their team. They 
 4. **Given** a board with multiple columns, **When** the user renames a column, **Then** the updated name is reflected immediately in the board.
 5. **Given** a board with multiple columns, **When** the user deletes an empty column, **Then** the column is removed and the remaining columns reorder.
 6. **Given** a column with existing cards, **When** the user attempts to delete it, **Then** the system warns that cards will be lost and requires explicit confirmation before deleting.
+7. **Given** a board view, **When** the user opens the board, **Then** the board and columns appear with soft, light background colors that make the workspace feel modern, visually distinct, and comfortable to view.
 
 ---
 
@@ -174,6 +175,7 @@ A team member opens the activity log for a board to see a chronological list of 
 
 - **FR-029**: All screens MUST be usable at mobile (375 px), tablet (768 px), and desktop (1280 px) widths.
 - **FR-030**: Board view on mobile MUST allow horizontal scrolling between columns.
+- **FR-031**: The board and column surfaces MUST use a soft, light, and visually calm color treatment that makes the interface feel more modern while remaining easy on the eyes.
 
 ### Key Entities
 
@@ -197,6 +199,7 @@ A team member opens the activity log for a board to see a chronological list of 
 - **SC-005**: Touch drag-and-drop on mobile successfully moves cards in ≥ 95% of test attempts across supported mobile screen sizes.
 - **SC-006**: The activity log for a board with 1,000 entries renders the first page in under 1 second.
 - **SC-007**: All interactive elements (buttons, inputs, modals) are accessible via keyboard navigation and screen reader without loss of functionality.
+- **SC-008**: In a simple usability review, at least 80% of participants describe the board interface as visually modern, calm, and easy to read.
 
 ---
 
@@ -211,3 +214,4 @@ A team member opens the activity log for a board to see a chronological list of 
 - **Mobile drag-and-drop**: Touch drag-and-drop must be supported but may use a dedicated touch event library; native HTML5 drag-and-drop (which has poor mobile support) is not assumed.
 - **Data retention**: User and board data is retained indefinitely unless the user explicitly deletes their account or board.
 - **Notification system**: Email or push notifications for assignments and comments are out of scope for v1. The activity log serves as the primary awareness mechanism.
+- **Visual theme**: The interface should prioritize soft, muted background tones for the board canvas and columns rather than stark white/black contrast, creating a calmer and more modern experience.
